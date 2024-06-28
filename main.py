@@ -14,12 +14,13 @@ login_manager.session_protection = "strong"
 login_manager.login_view = 'login'
 login_manager.login_message = '請登入成為鱷魚的一份子'
 
-users = {'Me': {'password': ''}}
+users = {'Me': {'password': '12311'}}
 
 
 class User(UserMixin):
     pass
 
+# 檢查是否是正確的使用者與密碼?  與request_loader 一起需要做
 @login_manager.user_loader
 def user_loader(使用者):
     # 1. Fetch against the database a user by `id`
@@ -31,7 +32,7 @@ def user_loader(使用者):
     user.id = 使用者
     return user
 
-# 檢查是否是正確的使用者與密碼?
+# 檢查是否是正確的使用者與密碼? 與user_loader 一起需要做
 @login_manager.request_loader
 def request_loader(request):
     使用者 = request.form.get('user_id')
@@ -53,6 +54,8 @@ def Home():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    # 更新使用者的資料庫應該在這邊, 再user_loader or request_loader 方法裡,會浪費太多資源!
+
     if request.method == 'GET':
         return render_template("Login.html")
 
