@@ -20,6 +20,10 @@
                 <input type="password"  name="password" placeholder="PassWord" required>
                 <i class='bx bxs-lock-alt'></i>
             </div>
+            <div class="input-box">
+                <input type="email"  name="email" placeholder="E-Mail" onclick="click=register" required>
+                <i class='bx bxs-envelope'></i>
+            </div>
 
             <div class="input-box">
                 <h2>{{ note_text }}</h2>
@@ -35,7 +39,7 @@
             {% endif %}
             {% endwith %}
 
-            <button type="submit" name="Register_btn" class="btn">Register</button>
+            <button type="submit" name="Register_btn" value="rb" class="btn">Register</button>
         </form>
     </div>
 </body>

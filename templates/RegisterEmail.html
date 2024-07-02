@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Register Email</title>
+    <link rel= "stylesheet" type= "text/css" href="static/LoginStyle.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<form method="post" action="/RegisterCheck">
+  <div class="form-group row">
+    <label for="email" class="col-2 offset-1 col-form-label">請輸入您的有效E-mail:</label>
+    <div class="col-3">
+      <input type="email" id="email" name="email" placeholder="E-Mail">
+      <small class="form-text">請輸入您的有效信箱</small>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="col-2 offset-3">
+      <button type="submit" class="btn btn-dirty-purple">確認</button>
+    </div>
+  </div>
+</form>
